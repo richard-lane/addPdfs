@@ -1,0 +1,40 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\title{$D\rightarrow K3\pi$ Efficiency Reweighting: Amplitude Models}
+\begin{document}
+\maketitle
+\begin{itemize}
+    \item Motivation: we want to find the momentum-space efficiency function $\epsilon(\mathbf{x})$,
+          where $\mathbf{x}$ is a point in the final state phase space.
+    \item We have produced Monte Carlo (MC) samples for three categories of decay, right sign (RS) wrong sign (WS) and phase space (phsp).
+    \item We know the PDFs* that were used to generate the MC samples; denote these
+          $\mathcal{A}_{RS}(\mathbf{x})$, $\mathcal{A}_{WS}(\mathbf{x})$ and $\mathcal{A}_{phsp}(\mathbf{x})$.
+    \item The PDF* that describes the MC samples is (by definition of the efficiency)\textsuperscript{i think?} the product of the generating PDF* and the efficiency:
+          \begin{equation*}
+              p^{MC}_{RS}(\mathbf{x}) = \mathcal{A}_{RS}(\mathbf{x})\epsilon(\mathbf{x})
+          \end{equation*}
+          \begin{equation}
+              p^{MC}_{WS}(\mathbf{x}) = \mathcal{A}_{WS}(\mathbf{x})\epsilon(\mathbf{x})
+          \end{equation}
+          \begin{equation*}
+              p^{MC}_{phsp}(\mathbf{x}) = \mathcal{A}_{phsp}(\mathbf{x})\epsilon(\mathbf{x})
+          \end{equation*}
+    \item If we combine the MC samples, the PDF describing them is:
+          \begin{equation}
+              p^{MC}(\mathbf{x}) = (\mathcal{I}_{RS}\mathcal{A}_{RS}
+              + \mathcal{I}_{WS}\mathcal{A}_{WS}
+              + \mathcal{I}_{phsp}\mathcal{A}_{phsp})\epsilon(\mathbf{x})
+          \end{equation}
+          Where $\mathcal{I}_{i}$ are numbers that can be extracted from the MC and depend on the relative statistics.
+    \item We can therefore extract the efficiency $\epsilon(\mathbf{x})$ by generating a sample (the "model sample") according to the PDF*:
+          \begin{equation}
+              p^{model}(\mathbf{x}) = \mathcal{I}_{RS}\mathcal{A}_{RS}
+              + \mathcal{I}_{WS}\mathcal{A}_{WS}
+              + \mathcal{I}_{phsp}\mathcal{A}_{phsp}
+          \end{equation}
+          and reweighting the combined MC sample to the model sample.
+\end{itemize}
+
+\end{document}
